@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useLanyardWS, type Data as LanyardData } from "use-lanyard";
+import { useLanyardWS } from "use-lanyard";
 
 const id = "997063531763617803";
 
@@ -62,7 +62,7 @@ export default function Discord() {
                       {activity.emoji?.name}
                     </span>
                     <span className="text-sm text-muted-foreground">
-                      "{activity.state}"
+                      &ldquo;{activity.state}&rdquo;
                     </span>
                   </div>
                 ))}

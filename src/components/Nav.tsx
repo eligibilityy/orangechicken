@@ -7,7 +7,6 @@ const Nav = () => {
       <div className="space-y-2">
         <h1 className="text-5xl sm:text-6xl font-semibold tracking-tight">
           yiliya<span className="text-orange-500">.</span>{" "}
-          {/* eslint-disable-next-line */}
         </h1>
       </div>
       <div className="flex items-center justify-between md:justify-center sm:items-center mb-4 md:mb-0">

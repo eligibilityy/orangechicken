@@ -10,7 +10,6 @@ import {
 import { Drumstick } from "lucide-react";
 import Discord from "@/components/home/Discord";
 import Weather from "@/components/home/Weather";
-import { BigSkeleton, SmallSkeleton } from "./Skeleton";
 
 export function Popup() {
   return (
