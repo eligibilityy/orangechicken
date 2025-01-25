@@ -27,7 +27,7 @@ export default function Footer() {
               I just really, really, really love orange chicken.
             </Balancer>
           </p>
-          <div className="mb-4 h-5 flex flex-col items-center gap-4 md:mb-0 md:flex-row">
+          <div className="h-5 flex items-center gap-4 md:mb-0 flex-row">
             <Link
               className="mb-1 transition-all underline underline-offset-[6px] text-muted-foreground hover:text-orange-500 decoration-1"
               href="/"
@@ -35,7 +35,7 @@ export default function Footer() {
             >
               home
             </Link>
-            <Separator orientation="vertical" />
+            <Separator orientation="vertical"  className="hidden sm:inline-block"/>
             <Link
               className="mb-1 transition-all underline underline-offset-[6px] text-muted-foreground hover:text-orange-500 decoration-1"
               href="/gallery"

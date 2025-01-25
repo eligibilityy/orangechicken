@@ -33,7 +33,7 @@ const ACES = () => {
             target="_blank"
           >
             <Button
-              className="group flex items-center text-lg sm:text-xl decoration-1 p-0"
+              className="group flex items-center text-base sm:text-xl decoration-1 p-0"
               variant="link"
             >
               <span>Repo</span>
@@ -47,7 +47,7 @@ const ACES = () => {
             target="_blank"
           >
             <Button
-              className="group flex items-center text-lg sm:text-xl decoration-1 p-0"
+              className="group flex items-center text-base sm:text-xl decoration-1 p-0"
               variant="link"
             >
               <span>Check it out</span>
