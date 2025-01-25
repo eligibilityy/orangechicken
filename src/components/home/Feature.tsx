@@ -5,7 +5,7 @@ import Balancer from "react-wrap-balancer";
 import { Button } from "@/components/ui/button";
 
 import { Section, Container } from "@/components/craft";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
 
@@ -22,7 +22,8 @@ const ACES = () => {
         <h1 className="!my-0 text-2xl sm:text-3xl font-bold">ACES</h1>
         <h3 className="!mb-0 text-muted-foreground text-base sm:text-lg">
           <Balancer>
-            A website for the ACES club in DLSL. Written in Typescript with Next.js, TailwindCSS, 
+            A website for the ACES club in DLSL. Written in Typescript with
+            Next.js, TailwindCSS,
           </Balancer>
         </h3>
         <div className="not-prose flex items-center gap-2">
@@ -40,7 +41,11 @@ const ACES = () => {
             </Button>
           </Link>
           <Separator orientation="vertical" className="h-5 mx-2" />
-          <Link href="https://dlsl-aces.vercel.app" className="flex items-center" target="_blank">
+          <Link
+            href="https://dlsl-aces.vercel.app"
+            className="flex items-center"
+            target="_blank"
+          >
             <Button
               className="group flex items-center text-lg sm:text-xl decoration-1 p-0"
               variant="link"

@@ -125,9 +125,7 @@ const GithubRepos: React.FC<GitHubReposProps> = ({ username }) => {
               {visibleCount > 6 ? "See less" : "See more"}{" "}
               <ChevronDown
                 className={`ml-1 h-4 w-4 transition-transform duration-300 
-                ${
-                  visibleCount > 6 ? "rotate-180" : ""
-                }`}
+                ${visibleCount > 6 ? "rotate-180" : ""}`}
                 strokeWidth="2.5px"
               />
             </Button>

@@ -4,7 +4,7 @@ import Balancer from "react-wrap-balancer";
 
 import { Button } from "../ui/button";
 
-import { Github, Twitter, Drumstick, Youtube } from "lucide-react";
+import { Github, Drumstick, Youtube } from "lucide-react";
 
 import { Section } from "../craft";
 import { FilmReel } from "@phosphor-icons/react/dist/ssr";

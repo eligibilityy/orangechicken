@@ -15,10 +15,10 @@ export const metadata: Metadata = {
   },
   description: "I really love orange chicken.",
   icons: {
-    icon: ['/favicon.ico'],
-    apple: ['/favicon.ico'],
-    shortcut: ['/favicon.ico'],
-  }
+    icon: ["/favicon.ico"],
+    apple: ["/favicon.ico"],
+    shortcut: ["/favicon.ico"],
+  },
 };
 
 export default function RootLayout({

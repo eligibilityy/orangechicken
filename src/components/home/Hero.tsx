@@ -3,7 +3,6 @@ import Link from "next/link";
 import OrangeChicken from "@/assets/orangechicken.png";
 
 import { Section } from "@/components/craft";
-import { Separator } from "@/components/ui/separator";
 
 const Hero = () => {
   return (
