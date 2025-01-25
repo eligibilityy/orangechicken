@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   },
   description: "I really love orange chicken.",
   icons: {
-    icon: ["/favicon.png"],
-    apple: ["/favicon.png"],
-    shortcut: ["/favicon.png"],
+    icon: ["/favicon.ico"],
+    apple: ["/favicon.ico"],
+    shortcut: ["/favicon.ico"],
   },
 };
 

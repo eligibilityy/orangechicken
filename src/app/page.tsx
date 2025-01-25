@@ -4,6 +4,7 @@ import Footer from "@/components/home/Footer";
 import Hero from "@/components/home/Hero";
 import Nav from "@/components/Nav";
 import GitHubRepos from "@/components/proj/Github";
+import { Popup } from "../components/home/Popover";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
             <Hero />
             <ACES />
             <GitHubRepos username="eligibilityy" />
+            <Popup />
             <Footer />
           </div>
         </Container>
