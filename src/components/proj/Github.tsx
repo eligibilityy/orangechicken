@@ -87,11 +87,11 @@ const GithubRepos: React.FC<GitHubReposProps> = ({ username }) => {
               <HoverCardTrigger asChild>
                 <Button
                   asChild
-                  className="group flex items-center text-lg decoration-1 p-0"
+                  className="group flex items-center text-lg decoration-1 p-0 text-muted-foreground"
                   variant="link"
                 >
                   <Link
-                    className="transition-all underline underline-offset-[6px] text-muted-foreground hover:text-orange-500 decoration-1"
+                    className="transition-all underline underline-offset-[6px] hover:text-orange-500 decoration-1"
                     href={repo.html_url}
                   >
                     <span>{repo.name}</span>
