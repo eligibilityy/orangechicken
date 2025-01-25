@@ -17,10 +17,10 @@ export default function Footer() {
         <div className="not-prose flex flex-col gap-6">
           <Link href="/" className="flex items-center gap-4">
             <h3 className="sr-only">yiliya</h3>
-            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
+            <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight">
               <span className="text-orange-500">orange</span>chicken
             </h1>
-            <Drumstick className="scale-150 mt-2" />
+            <Drumstick className="scale-110 sm:scale-150 mt-2" />
           </Link>
           <p>
             <Balancer>
