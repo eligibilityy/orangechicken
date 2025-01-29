@@ -20,6 +20,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { BigSkeleton } from "./Skeleton";
+import { Separator } from "../ui/separator";
 
 const Weather = () => {
   const [currentTime, setCurrentTime] = useState(
@@ -35,11 +36,10 @@ const Weather = () => {
   }, []);
 
   const currentDate = new Date();
-  const formattedDate = `${currentDate.getDate()}-${
-    currentDate.getMonth() + 1 < 10
-      ? `0${currentDate.getMonth() + 1}`
-      : currentDate.getMonth() + 1
-  }-${currentDate.getFullYear()}`;
+  const formattedDate = currentDate.toLocaleDateString("en-US", {
+    month: "short",
+    day: "2-digit",
+  });
 
   const [weatherData, setWeatherData] = useState<{
     apparentTemperature: number;
@@ -59,8 +59,7 @@ const Weather = () => {
     getWeather();
   }, []);
 
-  if (!weatherData)
-    return <BigSkeleton />;
+  if (!weatherData) return <BigSkeleton />;
 
   // Dynamically set background gradient based on temperature and theme
   const getTemperatureGradient = (day: boolean) => {
@@ -75,27 +74,6 @@ const Weather = () => {
       )} rounded-lg p-4 space-y-4`}
     >
       <div className="flex flex-col">
-        <div className="mb-5 flex justify-between px-4 items-center gap-2">
-          <div className="flex items-center gap-2 text-white">
-            <Clock4 />
-            <div>
-              <h4 className="text-xs text-white/80">Time</h4>
-              <p className="font-medium">
-                {currentTime.split(" ")[0]}{" "}
-                <span className="text-xs text-white/80 font-thin">
-                  {currentTime.split(" ")[1]}
-                </span>
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 text-white">
-            <Calendar />
-            <div>
-              <h4 className="text-xs text-white/80">Date</h4>
-              <p className="font-medium">{formattedDate}</p>
-            </div>
-          </div>
-        </div>
         <div className="mb-5 text-center">
           <h3 className="text-white/80 flex items-center justify-center gap-1 py-2">
             Lipa City
@@ -111,7 +89,9 @@ const Weather = () => {
                   </h1>
                 </TooltipTrigger>
                 <TooltipContent className="bg-muted text-lg">
-                  <p className="text-secondary-foreground opacity-80">Celsius</p>
+                  <p className="text-secondary-foreground opacity-80">
+                    Celsius
+                  </p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -134,7 +114,27 @@ const Weather = () => {
               : "Moderate"}
           </p>
         </div>
-        <div className="flex justify-between px-4 items-center gap-2">
+        <Separator className="mb-4 bg-white/30"/>
+        <div className="grid grid-cols-2 px-1 sm:px-3 items-center gap-2">
+          <div className="flex items-center gap-2 text-white">
+            <Clock4 />
+            <div>
+              <h4 className="text-xs text-white/80">Time</h4>
+              <p className="font-medium">
+                {currentTime.split(" ")[0]}{" "}
+                <span className="text-xs text-white/80 font-thin">
+                  {currentTime.split(" ")[1]}
+                </span>
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 text-white">
+            <Calendar />
+            <div>
+              <h4 className="text-xs text-white/80">Date</h4>
+              <p className="font-medium">{formattedDate}</p>
+            </div>
+          </div>
           <div className="flex items-center gap-2 text-white">
             {weatherData.rain > 0 ? (
               <>

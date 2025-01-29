@@ -22,7 +22,7 @@ export default function Footer() {
             </h1>
             <Drumstick className="scale-110 sm:scale-150 mt-2" />
           </Link>
-          <p>
+          <p className="text-muted-foreground">
             <Balancer>
               I just really, really, really love orange chicken.
             </Balancer>

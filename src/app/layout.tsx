@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
+import 'yet-another-react-lightbox/styles.css';
 import "./globals.css";
 import { ThemeProvider } from "./_provider";
 import ReactQueryProvider from "@/components/queryProvider"; // Import the wrapper
