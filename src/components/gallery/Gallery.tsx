@@ -22,7 +22,6 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
-import { Separator } from "../ui/separator";
 
 const photos = [
   {
