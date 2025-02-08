@@ -48,7 +48,7 @@ const Hero = () => {
             className="transition-all underline underline-offset-[6px] text-muted-foreground hover:text-orange-500 decoration-1"
             href="https://instagram.com/yiliya_liya"
           >
-            insta
+            instagram
           </Link>
         </div>
       </div>
