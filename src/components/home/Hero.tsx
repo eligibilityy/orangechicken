@@ -18,10 +18,14 @@ const Hero = () => {
       </div>
       <div className="md:text-lg space-y-2">
         <p>
-          Front-end, graphic design,{" "}
-          <span className="italic">certified house flipper</span>
+          Hey! You can call me <span className="text-orange-500 font-medium">Elijah</span>.
+          I&apos;m an 11th Grade Student from{" "}
+          <Link href="https://www.dlsl.edu.ph/" className="inline-flex">
+            De La Salle Lipa
+          </Link>
+          . I&apos;m into graphic design, front-end, and pixel art.
         </p>
-        <div className="flex h-5 space-x-4 items-end">
+        <div className="flex h-5 space-x-4 items-end !mt-6">
           <Link
             className="transition-all underline underline-offset-[6px] text-muted-foreground hover:text-orange-500 decoration-1"
             href="https://github.com/eligibilityy"
@@ -39,6 +43,12 @@ const Hero = () => {
             href="https://letterboxd.com/iyaiya/"
           >
             letterboxd
+          </Link>
+          <Link
+            className="transition-all underline underline-offset-[6px] text-muted-foreground hover:text-orange-500 decoration-1"
+            href="https://instagram.com/yiliya_liya"
+          >
+            insta
           </Link>
         </div>
       </div>

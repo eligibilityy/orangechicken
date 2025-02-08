@@ -1,7 +1,7 @@
 import * as React from "react";
 import Image from "next/image";
 
-import { Section, Container } from "@/components/craft";
+import { Section } from "@/components/craft";
 import { Card, CardContent } from "@/components/ui/card";
 
 import {

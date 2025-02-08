@@ -114,7 +114,7 @@ const Weather = () => {
               : "Moderate"}
           </p>
         </div>
-        <Separator className="mb-4 bg-white/30"/>
+        <Separator className="mb-4 bg-white/30" />
         <div className="grid grid-cols-2 px-1 sm:px-3 items-center gap-2">
           <div className="flex items-center gap-2 text-white">
             <Clock4 />
@@ -140,8 +140,11 @@ const Weather = () => {
               <>
                 <CloudRainIcon />
                 <div>
-                  <h4 className="text-xs">Rain</h4>
-                  <p>{weatherData.rain}mm</p>
+                  <h4 className="text-xs text-white/80">Rain</h4>
+                  <p>
+                    {weatherData.rain.toPrecision(2)}{" "}
+                    <span className="text-xs text-white/80 font-thin">mm</span>
+                  </p>
                 </div>
               </>
             ) : (

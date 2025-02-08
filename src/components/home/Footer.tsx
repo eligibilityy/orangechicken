@@ -4,7 +4,7 @@ import Balancer from "react-wrap-balancer";
 
 import { Button } from "../ui/button";
 
-import { Github, Drumstick, Youtube } from "lucide-react";
+import { Github, Drumstick, Youtube, Instagram } from "lucide-react";
 
 import { Section } from "../craft";
 import { FilmReel } from "@phosphor-icons/react/dist/ssr";
@@ -72,9 +72,17 @@ export default function Footer() {
               <FilmReel />
             </Button>
           </Link>
+          <Link
+            href="https://instagram.com/yiliya_liya/"
+            className="flex items-center"
+          >
+            <Button variant="outline" size="icon">
+              <Instagram />
+            </Button>
+          </Link>
         </div>
         <p className="text-muted-foreground">
-          &copy; <a href="https://github.com/yiliya">yiliya</a>. All rights
+          &copy; <a href="https://github.com/eligibilityy">yiliya</a>. All rights
           reserved. 2025-present.
         </p>
       </Section>

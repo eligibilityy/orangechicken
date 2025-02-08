@@ -8,6 +8,7 @@ const id = "997063531763617803";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Link from "next/link";
 import { SmallSkeleton } from "./Skeleton";
+import { ArrowUpRight } from "lucide-react";
 
 
 export default function Discord() {
@@ -91,9 +92,9 @@ export default function Discord() {
                       href={`https://open.spotify.com/track/${activity.sync_id}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-orange-500 transition-all"
+                      className="hover:text-orange-500 transition-all flex items-center gap-1"
                     >
-                      {activity.details}
+                      {activity.details} <ArrowUpRight size={20}/>
                     </Link>
                   ) : (
                     activity.details
