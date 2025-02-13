@@ -26,8 +26,8 @@ const Hero = () => {
           </Link>
           . I&apos;m into graphic design, front-end, and pixel art.
         </p>
-        <div className="flex space-x-4 justify-center mt-4">
-          <div className="flex flex-col space-y-1">
+        <div className="flex space-x-6 justify-center mt-4">
+          <div className="flex flex-col space-y-3">
             <Link
               className="transition-all underline underline-offset-[6px] text-muted-foreground hover:text-orange-500 decoration-1"
               href="https://github.com/eligibilityy"
@@ -41,7 +41,7 @@ const Hero = () => {
               youtube
             </Link>
           </div>
-          <div className="flex flex-col space-y-1">
+          <div className="flex flex-col space-y-3">
             <Link
               className="transition-all underline underline-offset-[6px] text-muted-foreground hover:text-orange-500 decoration-1"
               href="https://letterboxd.com/iyaiya/"
