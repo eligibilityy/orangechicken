@@ -8,7 +8,6 @@ import { Github, Drumstick, Youtube, Instagram } from "lucide-react";
 
 import { Section } from "../craft";
 import { FilmReel } from "@phosphor-icons/react/dist/ssr";
-import { Separator } from "../ui/separator";
 
 export default function Footer() {
   return (
@@ -27,23 +26,6 @@ export default function Footer() {
               I just really, really, really love orange chicken.
             </Balancer>
           </p>
-          <div className="h-5 flex items-center gap-4 md:mb-0 flex-row">
-            <Link
-              className="mb-1 transition-all underline underline-offset-[6px] text-muted-foreground hover:text-orange-500 decoration-1"
-              href="/"
-              rel="noopener noreferrer"
-            >
-              home
-            </Link>
-            <Separator orientation="vertical"  className="hidden sm:inline-block"/>
-            <Link
-              className="mb-1 transition-all underline underline-offset-[6px] text-muted-foreground hover:text-orange-500 decoration-1"
-              href="/gallery"
-              rel="noopener noreferrer"
-            >
-              gallery
-            </Link>
-          </div>
         </div>
       </Section>
       <Section className="not-prose flex flex-col justify-between gap-6 border-t md:flex-row md:items-center md:gap-2">

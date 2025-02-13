@@ -1,10 +1,10 @@
 import { Section, Container } from "@/components/craft";
-import ACES from "@/components/home/Feature";
 import Footer from "@/components/home/Footer";
 import Hero from "@/components/home/Hero";
 import Nav from "@/components/Nav";
 import GitHubRepos from "@/components/proj/Github";
 import { Popup } from "../components/home/Popover";
+import Cooking from "@/components/home/Feature";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
           <div className="m-auto h-full w-full max-w-5xl px-4 py-4 md:px-6 md:py-10">
             <Nav />
             <Hero />
-            <ACES />
+            <Cooking />
             <GitHubRepos username="eligibilityy" />
             <Popup />
             <Footer />

@@ -17,12 +17,12 @@ const Nav = () => {
           >
             <span className="text-orange-500">/</span>home
           </Link>
-          <Link
+          {/* <Link
             className="transition-all opacity-70 hover:opacity-90 hover:-mt-px hover:mb-px"
             href="/gallery"
           >
             <span className="text-orange-500">/</span>gallery
-          </Link>
+          </Link> */}
         </div>
         {/* <Button className="group flex items-center" variant="default">
                 <Link href="#" className="flex items-center gap-1">

@@ -9,7 +9,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
 
-const ACES = () => {
+const Cooking = () => {
   return (
     <Section>
       <div>
@@ -83,7 +83,7 @@ const ACES = () => {
             {/* </Link> */}
             <Separator orientation="vertical" className="h-5 mx-2" />
             <Link
-              href="https://talalasalyano.vercel.app"
+              href="https://tala.yiliya.me"
               className="flex items-center"
               target="_blank"
             >
@@ -102,4 +102,4 @@ const ACES = () => {
   );
 };
 
-export default ACES;
+export default Cooking;
