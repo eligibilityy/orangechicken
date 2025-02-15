@@ -1,9 +1,13 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
-import 'yet-another-react-lightbox/styles.css';
 import "./globals.css";
-import { ThemeProvider } from "./_provider";
-import ReactQueryProvider from "@/components/queryProvider"; // Import the wrapper
+import { ThemeProvider } from "@/app/_provider";
+import ReactQueryProvider from "@/components/queryProvider";
+import { ReactLenis } from "@/lib/lenis";
+import Preloader from "@/components/Preloader";
+import GSAPProvider from "@/components/GSAPProvider";
+import Noise from "@/components/Noise";
+import PageTransition from "@/components/PageTransition";
 
 const InstrumentSans = Instrument_Sans({
   subsets: ["latin"],
@@ -14,32 +18,80 @@ export const metadata: Metadata = {
     default: "orange chicken",
     template: "%s | orange chicken",
   },
-  description: "I really love orange chicken.",
+  description: "I just really, really, really love orange chicken.",
+  keywords: [
+    "Frontend Developer",
+    "Graphic Designer",
+    "Pixel Artist",
+    "Student Developer",
+    "Web Development",
+  ],
+  authors: [
+    {
+      name: "Elijah",
+      url: "https://github.com/eligibilityy",
+    },
+  ],
+  creator: "Elijah",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://yiliya.me",
+    title: "orange chicken",
+    description: "Hey! I'm Elijah, an 11th Grade Student from De La Salle Lipa. I'm into graphic design, front-end development, and pixel art.",
+    siteName: "orange chicken",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "orange chicken",
+    description: "Hey! I'm Elijah, an 11th Grade Student from De La Salle Lipa. I'm into graphic design, front-end development, and pixel art.",
+  },
   icons: {
     icon: ["/favicon.ico"],
-    apple: ["/favicon.ico"],
-    shortcut: ["/favicon.ico"],
+    apple: ["/apple-touch-icon.png"],
+    shortcut: ["/favicon-32x32.png"],
+  },
+  manifest: "/site.webmanifest",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${InstrumentSans.className} antialiased`}>
-        <ReactQueryProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </ReactQueryProvider>
+      <body className={InstrumentSans.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ReactQueryProvider>
+            <ReactLenis root>
+              <GSAPProvider>
+                <Preloader />
+                <PageTransition />
+                <Noise />
+                <main data-page-content>
+                  {children}
+                </main>
+              </GSAPProvider>
+            </ReactLenis>
+          </ReactQueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
