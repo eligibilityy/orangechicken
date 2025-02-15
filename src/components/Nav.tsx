@@ -43,8 +43,7 @@ const Nav = () => {
         ease: "power2.out"
       }, "-=0.2");
 
-      // Add hover animations
-      gsap.utils.toArray(".nav-link-hover").forEach((link: any) => {
+      (gsap.utils.toArray(".nav-link-hover") as HTMLElement[]).forEach((link) => {
         link.addEventListener("mouseenter", () => {
           gsap.to(link, {
             y: -2,

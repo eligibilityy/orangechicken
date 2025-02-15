@@ -57,7 +57,7 @@ const GithubRepos = ({ username }: { username: string }) => {
       });
 
       // Add hover animations
-      gsap.utils.toArray(".repo-card").forEach((card: any) => {
+      (gsap.utils.toArray(".repo-card") as HTMLElement[]).forEach((card) => {
         card.addEventListener("mouseenter", () => {
           gsap.to(card, {
             y: -10,

@@ -7,8 +7,23 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { SmallSkeleton } from "./Skeleton";
 import { FaDiscord, FaSpotify, FaGamepad, FaKeyboard } from "react-icons/fa";
 import gsap from "gsap";
+import Image from "next/image";
 
 const DISCORD_ID = "997063531763617803";
+
+// Add these types near the top of the file
+type SpotifyAssets = {
+  large_image?: string;
+  large_text?: string;
+};
+
+type DiscordActivity = {
+  type: number;
+  name: string;
+  details?: string;
+  state?: string;
+  assets?: SpotifyAssets;
+};
 
 const Discord = () => {
   const discordRef = useRef(null);
@@ -112,10 +127,10 @@ const Discord = () => {
     return texts[status as keyof typeof texts] || "Offline";
   };
 
-  const getActivityIcon = (activity: any) => {
+  const getActivityIcon = (activity: DiscordActivity) => {
     if (activity.type === 2 && activity.name === "Spotify") return FaSpotify;
     if (activity.type === 0) return FaGamepad; // Playing Game
-    return FaKeyboard; // Default/Custom Activity
+    return FaKeyboard;
   };
 
   const getActivityContent = () => {
@@ -133,10 +148,12 @@ const Discord = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                   <div className="flex items-center gap-4">
                     {activity.assets?.large_image ? (
-                      <img
+                      <Image
                         src={activity.assets.large_image.replace("spotify:", "https://i.scdn.co/image/")}
                         alt="Album Art"
-                        className="h-16 w-16 rounded-md shadow-md transition-transform group-hover:scale-105"
+                        width={64}
+                        height={64}
+                        className="h-16 w-16 rounded-md shadow-md transition-transform group-hover:scale-105 object-cover"
                       />
                     ) : (
                       <div className="flex h-16 w-16 items-center justify-center rounded-md bg-muted">

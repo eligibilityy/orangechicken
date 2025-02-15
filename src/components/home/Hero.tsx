@@ -63,7 +63,7 @@ const Hero = () => {
         ease: "power2.out",
       }, "-=0.4");
 
-      gsap.utils.toArray(".hero-link").forEach((link: any) => {
+      (gsap.utils.toArray(".hero-link") as HTMLElement[]).forEach((link) => {
         link.addEventListener("mouseenter", () => {
           gsap.to(link, {
             y: -5,
@@ -114,10 +114,10 @@ const Hero = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col space-y-6 z-10">
           <h1 ref={headingRef} className="text-5xl w-full sm:text-6xl font-bold leading-tight">
-            Hey, I'm <span ref={nameSpanRef} className="text-orange-500">Elijah</span>
+            Hey, I&apos;m <span ref={nameSpanRef} className="text-orange-500">Elijah</span>
           </h1>
           <p ref={paragraphRef} className="text-lg text-muted-foreground">
-            An 11th Grade Student from De La Salle Lipa. I'm into graphic design, 
+            An 11th Grade Student from De La Salle Lipa. I&apos;m into graphic design, 
             front-end development, and pixel art.
           </p>
           <div className="flex gap-4">

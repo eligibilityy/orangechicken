@@ -135,19 +135,7 @@ const Weather = () => {
     return () => ctx.revert();
   }, []);
 
-  const currentDate = new Date();
-  const formattedDate = currentDate.toLocaleDateString("en-US", {
-    month: "short",
-    day: "2-digit",
-  });
-
   if (!weatherData) return <SmallSkeleton />;
-
-  // Dynamically set background gradient based on temperature and theme
-  const getTemperatureGradient = (day: boolean) => {
-    if (day) return "bg-gradient-to-tl from-orange-600 to-yellow-500"; // Cold (Blue - Darker for dark mode)
-    return "bg-gradient-to-tl from-sky-500 to-indigo-800"; // Mild (Blue to Orange)
-  };
 
   const getWeatherIcon = () => {
     if (weatherData.rain > 0) return <CloudRain className="weather-icon w-10 h-10 text-blue-400" />;

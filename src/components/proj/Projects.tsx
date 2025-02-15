@@ -51,7 +51,7 @@ const Projects = () => {
           ease: "power2.out",
         });
 
-      gsap.utils.toArray(".project-card").forEach((card: any) => {
+      (gsap.utils.toArray(".project-card") as HTMLElement[]).forEach((card) => {
         card.addEventListener("mouseenter", () => {
           gsap.to(card, {
             y: -5,
