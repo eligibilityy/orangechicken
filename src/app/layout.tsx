@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://yiliya.me",
-    title: "orange chicken",
-    description: "Hey! I'm Elijah, an 11th Grade Student from De La Salle Lipa. I'm into graphic design, front-end development, and pixel art.",
+    title: "orangechicken",
+    description: "I just really, really, really love orange chicken.",
     siteName: "orange chicken",
   },
   twitter: {
     card: "summary_large_image",
-    title: "orange chicken",
-    description: "Hey! I'm Elijah, an 11th Grade Student from De La Salle Lipa. I'm into graphic design, front-end development, and pixel art.",
+    title: "orangechicken",
+    description: "I just really, really, really love orange chicken.",
   },
   icons: {
     icon: ["/favicon.ico"],
