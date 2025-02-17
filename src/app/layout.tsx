@@ -1,23 +1,19 @@
 import { Metadata } from "next";
-import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/_provider";
 import ReactQueryProvider from "@/components/queryProvider";
 import { ReactLenis } from "@/lib/lenis";
-import Preloader from "@/components/Preloader";
 import GSAPProvider from "@/components/GSAPProvider";
-import Noise from "@/components/Noise";
-import PageTransition from "@/components/PageTransition";
+import Helvetica_Neue from "next/font/local";
+import Noise from "@/blocks/Animations/Noise/Noise";
 
-const InstrumentSans = Instrument_Sans({
-  subsets: ["latin"],
+const helvetica = Helvetica_Neue({
+  src: "../assets/fonts/HelveticaNeue/HelveticaNeue-Medium.woff2",
+  variable: "--font-helvetica",
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "orange chicken",
-    template: "%s | orange chicken",
-  },
+  title: "Elijah",
   description: "I just really, really, really love orange chicken.",
   keywords: [
     "Frontend Developer",
@@ -37,13 +33,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://yiliya.me",
-    title: "orangechicken",
+    title: "yiliya.me",
     description: "I just really, really, really love orange chicken.",
     siteName: "orange chicken",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "orangechicken",
+    title: "yiliya.me",
     description: "I just really, really, really love orange chicken.",
   },
   icons: {
@@ -58,9 +53,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };
@@ -71,8 +66,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={InstrumentSans.className}>
+    <html lang="en" suppressHydrationWarning className={helvetica.variable}>
+      <body className="antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -82,12 +77,16 @@ export default function RootLayout({
           <ReactQueryProvider>
             <ReactLenis root>
               <GSAPProvider>
-                <Preloader />
-                <PageTransition />
-                <Noise />
-                <main data-page-content>
-                  {children}
-                </main>
+                <div className="w-full h-full fixed inset-0 pointer-events-none z-50">
+                  <Noise
+                    patternSize={250}
+                    patternScaleX={1}
+                    patternScaleY={1}
+                    patternRefreshInterval={5}
+                    patternAlpha={15}
+                  />
+                </div>
+                <main data-page-content>{children}</main>
               </GSAPProvider>
             </ReactLenis>
           </ReactQueryProvider>

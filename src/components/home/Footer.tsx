@@ -1,84 +1,55 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import Link from "next/link";
-import Balancer from "react-wrap-balancer";
-import { Button } from "../ui/button";
-import { Github, Drumstick, Youtube, Instagram } from "lucide-react";
-import { Section } from "../craft";
-import { FilmReel } from "@phosphor-icons/react/dist/ssr";
-import gsap from "gsap";
-
-const Footer = () => {
-  const footerRef = useRef(null);
-  const drumstickRef = useRef(null);
-
-  useEffect(() => {
-
-    const ctx = gsap.context(() => {
-      gsap.set(footerRef.current, { 
-        opacity: 0, 
-        y: 20 
-      });
-
-      const tl = gsap.timeline();
-
-      tl.to(footerRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power2.out"
-      }, "-=0.2");
-    });
-
-    return () => ctx.revert();
-  }, []);
-
+export default function Footer() {
   return (
-    <>
-      <footer ref={footerRef} className="pb-8 text-center text-sm">
-        <Section>
-          <div className="not-prose flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-4">
-              <h3 className="sr-only">yiliya</h3>
-              <h1 className="footer-title text-3xl sm:text-5xl font-semibold tracking-tight">
-                <span className="text-orange-500">orange</span>chicken
-              </h1>
-              <Drumstick ref={drumstickRef} className="scale-110 sm:scale-150 mt-2" />
-            </Link>
-            <p className="footer-text text-base text-left text-muted-foreground">
-              <Balancer>
-                I just really, really, really love orange chicken.
-              </Balancer>
-            </p>
+    <footer className="py-12 px-6 border-t bg-white dark:bg-black border-neutral-200 dark:border-neutral-800">
+      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+        <div className="space-y-4">
+          <h4 className="text-base md:text-lg leading-normal tracking-tight text-muted-foreground">
+            Contact
+          </h4>
+          <a
+            href="mailto:elijah_patrick_panique@dlsl.edu.ph"
+            className="text-base md:text-lg leading-normal tracking-tight block hover:opacity-50 transition-opacity dark:text-neutral-300"
+          >
+            elijah_patrick_panique@dlsl.edu.ph
+          </a>
+        </div>
+        <div className="space-y-4">
+          <h4 className="text-base md:text-lg leading-normal tracking-tight text-muted-foreground">
+            Social
+          </h4>
+          <div className="flex flex-col gap-2">
+            <a
+              href="https://github.com/eligibilityy"
+              className="text-base md:text-lg leading-normal tracking-tight hover:opacity-50 transition-opacity dark:text-neutral-300"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://instagram.com/yiliya_liya"
+              className="text-base md:text-lg leading-normal tracking-tight hover:opacity-50 transition-opacity dark:text-neutral-300"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://youtube.com/@yiliyaliya"
+              className="text-base md:text-lg leading-normal tracking-tight hover:opacity-50 transition-opacity dark:text-neutral-300"
+            >
+              Youtube
+            </a>
+            <a
+              href="https://letterboxd.com/iyaiya"
+              className="text-base md:text-lg leading-normal tracking-tight hover:opacity-50 transition-opacity dark:text-neutral-300"
+            >
+              Letterboxd
+            </a>
           </div>
-        </Section>
-        <Section className="not-prose flex flex-col justify-between gap-6 border-t md:flex-row md:items-center md:gap-2">
-          <div className="flex gap-2">
-            {[
-              { icon: <Github />, href: "https://github.com/eligibilityy" },
-              { icon: <Youtube />, href: "https://youtube.com/@yiliyaliya" },
-              { icon: <FilmReel />, href: "https://letterboxd.com/iyaiya/" },
-              { icon: <Instagram />, href: "https://instagram.com/yiliya_liya/" }
-            ].map((social, index) => (
-              <Link
-                key={index}
-                href={social.href}
-                className="footer-social flex items-center"
-              >
-                <Button variant="outline" size="icon">
-                  {social.icon}
-                </Button>
-              </Link>
-            ))}
-          </div>
-          <p className="footer-copyright text-left text-muted-foreground">
-            &copy; <a href="https://github.com/eligibilityy">yiliya</a> 2025.
+        </div>
+        <div className="space-y-4">
+          <p className="swiss-text text-neutral-500 dark:text-neutral-400">
+            © 2025 yiliya
           </p>
-        </Section>
-      </footer>
-    </>
+        </div>
+      </div>
+    </footer>
   );
-};
-
-export default Footer;
+}

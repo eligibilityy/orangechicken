@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
-import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 export default function ModeToggle() {
   const { theme, setTheme } = useTheme();
@@ -17,28 +18,17 @@ export default function ModeToggle() {
   }
 
   return (
-    <div>
-      {theme === "dark" ? (
-        <Button
-          variant="default"
-          className=" border-zinc-900"
-          size="icon"
-          onClick={() => setTheme("light")}
-        >
-          <Sun className="w-5 h-5" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      ) : (
-        <Button
-          variant="default"
-          size="icon"
-          className="border-zinc-100 "
-          onClick={() => setTheme("dark")}
-        >
-          <Moon className="w-5 h-5" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      )}
+    <div className="flex items-center space-x-3">
+      <Label htmlFor="theme-toggle" className="sr-only">
+        Toggle theme
+      </Label>
+      <Sun className="w-5 h-5 text-neutral-900 dark:text-neutral-50" />
+      <Switch
+        id="theme-toggle"
+        checked={theme === "dark"}
+        onCheckedChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+      />
+      <Moon className="w-5 h-5 text-neutral-900 dark:text-neutral-50" />
     </div>
   );
 }

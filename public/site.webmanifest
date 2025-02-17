@@ -1,7 +1,7 @@
 {
-  "name": "orangechicken",
+  "name": "yiliya.me",
   "short_name": "yiliya",
-  "description": "Hey! I'm Elijah, an 11th Grade Student from De La Salle Lipa. I'm into graphic design, front-end development, and pixel art.",
+  "description": "I love orange chicken.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -18,4 +18,4 @@
       "type": "image/png"
     }
   ]
-} 
+}
